@@ -57,10 +57,12 @@
 }
 
 .card > .row > .icon {
+  font-size: 2rem;
+  padding-bottom: 10px;
   background: #525252;
   color: white;
   border-radius: 50%;
-  width: 50px;
+  width: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
