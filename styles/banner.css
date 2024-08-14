@@ -1,0 +1,50 @@
+.banner {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
+    url(/assets/banner.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  color: #fff;
+  text-align: center;
+}
+.banner-text {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 70px;
+  text-size-adjust: 100%;
+  font-weight: 400;
+  margin: 0 0 24px;
+  padding: 0;
+}
+.banner p {
+  font-family: "Karla", sans-serif;
+  font-weight: 200;
+  font-size: 24px; /* Adjust font size as needed */
+  color: #fff; /* Change text color if needed */
+  max-width: 800px; /* Set a maximum width for better readability */
+  margin: 0 auto; /* Center the paragraph block */
+}
+.banner button {
+  font-family: "Karla", sans-serif;
+  font-weight: 600;
+  display: inline-block;
+  border: 0;
+  height: 50px;
+  width: 160px;
+  background-color: #525252;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.banner button:hover {
+  border: 3px solid #525252;
+  background-color: rgb(255, 255, 255);
+  color: #000;
+}
