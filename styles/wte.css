@@ -1,0 +1,58 @@
+.properties-for-sale {
+  text-align: center;
+}
+
+.properties-for-sale h2 {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 3vw;
+  font-weight: 100;
+  color: #4a4a4a;
+  margin-bottom: 50px;
+  letter-spacing: -0.2vw;
+}
+
+.property-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.property-item {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  max-width: 50%;
+}
+
+.property-item img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.property-info {
+  padding: 20px;
+  text-align: left;
+  flex: 1;
+}
+
+.property-info h3 {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 3vh;
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.property-info p pre {
+  margin: 5px 0;
+  color: #000000;
+  line-height: 1.6;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 18px;
+  color: #00a4e4;
+}

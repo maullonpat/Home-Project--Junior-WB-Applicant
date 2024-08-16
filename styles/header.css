@@ -1,0 +1,268 @@
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 40px 100px;
+  z-index: 100000;
+  text-align: center;
+}
+
+header.sticky {
+  padding: 5px 100px;
+  background: #fff;
+  height: 80px;
+}
+
+/* Add the underline animation to sticky state */
+header.sticky ul li a {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Ensure the underline effect is applied in the sticky state */
+header.sticky ul li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: #000; /* Color for the underline effect */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+header.sticky ul li a:hover::after {
+  width: 100%;
+}
+
+header .logo {
+  display: inline-block;
+  transition: 0.6s;
+  width: 160px;
+  height: 75px;
+  object-fit: contain;
+}
+
+header ul {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li {
+  position: relative;
+  list-style: none;
+}
+
+header ul li a {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.6s;
+}
+
+header ul li a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+header ul li a:hover::after {
+  width: 100%;
+}
+
+header button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  display: inline-block;
+  border: 0;
+  height: 50px;
+  width: 160px;
+  background-color: #525252;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+header button:hover {
+  border: 3px solid #525252;
+  background-color: rgb(255, 255, 255);
+  color: #000;
+}
+header.sticky .menub {
+  color: #000;
+}
+header.sticky .logo {
+  filter: invert(1);
+}
+* {
+  font-family: "Popppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 0px;
+}
+body {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  background: #fff;
+  min-height: 200vh;
+}
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 20px; /* Adjust position as needed */
+  transform: translateY(-50%);
+}
+
+.menu-bar {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 80px; /* Adjust based on header height */
+  right: 0;
+  width: 100vw; /* Adjust width as needed */
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+  transform: translateX(100%); /* Initially hide menu bar off-screen */
+}
+
+/* Show menu bar when .show class is added */
+.menu-bar.show {
+  display: flex;
+  transform: translateX(0); /* Show menu bar */
+}
+
+.menu-bar ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-bar ul li {
+  margin: 10px 0;
+}
+
+.menu-bar ul li a {
+  color: #000;
+}
+
+.menu-bar button {
+  width: 100%;
+}
+
+@media (max-width: 1250px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  header ul {
+    display: none; /* Hide the menu items by default */
+  }
+
+  header .logo {
+    width: 120px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+  }
+
+  .menu-bar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: 0;
+    top: 78px; /* Adjust based on header height */
+    right: 0;
+    width: 50vw; /* Adjust width as needed */
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .menu-bar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-bar ul li {
+    margin: 10px 0;
+  }
+
+  .menu-bar ul li a {
+    color: #000;
+  }
+
+  .menu-bar button {
+    width: 100%;
+  }
+}
+@media (max-width: 1250px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  header ul {
+    display: none; /* Hide the menu items by default */
+  }
+
+  header .logo {
+    width: 120px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+  }
+
+  .menu-toggle {
+    display: block; /* Show the menu toggle button */
+  }
+
+  .menu-bar {
+    display: flex;
+    transform: translateX(100%); /* Initially hide menu bar off-screen */
+  }
+
+  .menu-bar.show {
+    transform: translateX(0); /* Show menu bar */
+  }
+}
+
+/* Show menu bar on smaller screens */
+@media (max-width: 768px) {
+  .menu-bar {
+    width: 100%; /* Full width on smaller screens */
+  }
+}

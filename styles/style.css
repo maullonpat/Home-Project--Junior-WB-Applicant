@@ -1,119 +1,493 @@
-* {
-  font-family: "Playfair Display", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  letter-spacing: 0px;
-}
-body {
-  background: #fff;
-  min-height: 200vh;
+.webpage-title {
+  font-size: 10vw;
+  font-weight: 100;
+  color: #d2e2ca;
+  letter-spacing: -0.2vw;
+  animation: glow-animation 1s infinite alternate;
 }
 
-@media only screen and (min-width: 100px) {
-  header,
-  header ul {
-    display: column;
+@keyframes glow-animation {
+  0% {
+    text-shadow: 0 0 5px #d2e2ca, 0 0 5px #d2e2ca, 0 0 15px #c6ffa9,
+      0 0 20px #d2e2ca;
+  }
+
+  50% {
+    text-shadow: 0 0 10px #d2e2ca, 0 0 10px #d2e2ca, 0 0 30px #c6ffa9,
+      0 0 40px #d2e2ca;
+  }
+
+  100% {
+    text-shadow: 0 0 5px #d2e2ca, 0 0 5px #d2e2ca, 0 0 15px #c6ffa9,
+      0 0 20px #d2e2ca;
   }
 }
-@media only screen and (min-width: 768px) {
-  header,
-  header ul {
-    display: flex;
-  }
-}
-.wte-container {
+
+.bg-1,
+.bg-2,
+.bg-5 {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  width: 70%;
-  margin: 0 auto;
-  /* height: 500px; */
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.bg-1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+    url(/assets/banner.jpg);
+  width: 100%;
+  height: 100vh;
+}
+.bg-2 {
+  background-color: #ffffff;
+  width: 100%;
+
+  height: 100%;
+  color: #525252;
+  margin-bottom: 8vh;
+  margin-top: 8vh;
+}
+.bg-3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(/assets/tsp.jpg);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
   overflow: hidden;
-
-  position: relative;
-}
-.wte-container .card-1,
-.wte-container .card-2,
-.wte-container .card-3,
-.wte-container .card-4 {
-  flex: 1 1 calc(50% - 16px); /* Each card takes up an equal amount of space */
-  margin: 8px; /* Add some spacing between the cards */
-  position: relative;
-  overflow: hidden; /* Ensure child elements do not overflow */
-  height: 500px;
-  box-shadow: 0 2px 13px rgba(0, 0, 0, 0.5);
-}
-.card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image covers the card area */
-  transition: opacity 0.7s ease; /* Smooth transition effect */
-}
-.card-img:hover {
-  opacity: 0.7;
-}
-.card-1:hover .card-body1,
-.card-2:hover .card-body2,
-.card-3:hover .card-body3,
-.card-4:hover .card-body4 {
-  right: 0;
-  opacity: 1; /* Show the card body on hover */
-}
-.wte-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.card-body1,
-.card-body2,
-.card-body3,
-.card-body4 {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: -100%;
-  position: absolute;
-  background: #1f3d4738;
-  backdrop-filter: blur(25px); /* Blurs the background */
-  padding: 30px;
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Center items horizontally */
-  justify-content: center; /* Center items vertically */
-  transition: right 0.7s ease, opacity 0.7s ease; /* Smooth transition for both properties */
-  opacity: 0;
-  text-align: center; /* Center text within the card */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
 }
-.card-title1,
-.card-title2,
-.card-title3,
-.card-title4 {
+.bg-3 h1 {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 3vw;
   color: #fff;
   text-align: center;
-  font-size: 30px;
-  font-weight: 200;
+  padding-top: 50px;
   margin: 0;
 }
-.card-info1,
-.card-info2,
-.card-info3,
-.card-info4 {
+.tsp-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+  width: 80%;
+  max-width: 1300px;
+  height: auto;
+  margin-top: 20px; /* Add spacing between heading and grid */
+  text-align: center;
+  position: relative;
+}
+
+.tsp-container h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+}
+
+.item {
+  border-radius: 40px;
+  backdrop-filter: blur(25px);
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Karla", sans-serif;
-  font-weight: 100;
-  font-size: 20px;
-  text-align: center;
-  color: #fff;
-  margin-top: 10px;
+  font-size: 24px;
+  height: 300px;
 }
-.WTO-header {
-  font-weight: 100;
-  font-size: 50px;
+.item h1 {
+  position: absolute; /* Position h1 on top */
+  top: 10px; /* Adjust as needed */
+  left: 10px; /* Adjust as needed */
+  font-size: 50px; /* Adjust size as needed */
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive styles */
+
+.bg-4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(/assets/tbp.jpg);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+}
+.bg-4 h1 {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 3vw;
+  color: #fff;
   text-align: center;
+  padding-top: 50px;
+}
+.bg-5 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url(/assets/work-with-us.jpg);
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+}
+
+/* work with us */
+
+.wts-text {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 6vw;
+  font-weight: 100;
+  color: hsl(101, 30%, 84%);
+  letter-spacing: -0.2vw;
+}
+.workwithus p {
+  font-weight: 100;
+  font-size: 24px; /* Adjust font size as needed */
+  color: #fff; /* Change text color if needed */
+  max-width: 800px; /* Set a maximum width for better readability */
+  margin: 0 auto; /* Center the paragraph block */
+}
+.workwithus button {
+  font-weight: 600;
+  display: inline-block;
+  border: 0;
+  height: 50px;
+  width: 160px;
+  background-color: #525252;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.workwithus button:hover {
+  border: 3px solid #525252;
+  background-color: rgb(255, 255, 255);
+  color: #000;
+}
+
+/* this section has footer style */
+
+.footer {
+  background-color: #525252;
+  width: 100%;
+  height: 60%;
+  padding: 40px;
+  color: #fff;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-right {
+  width: 48%;
+  margin-bottom: 20px;
+}
+
+.footer-left h2,
+.footer-right h2 {
+  font-family: "Playfair Display", sans-serif;
+  font-size: 40px;
+  color: #d2e2ca;
+  margin-bottom: 15px;
+}
+
+.footer-left p,
+.footer-right p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.address-contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.address,
+.contact {
+  width: 48%;
+}
+
+.address h3,
+.contact h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.credits {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.credits a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+}
+
+.credits a:hover {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+.footer-right form {
+  margin-top: 20px;
+}
+
+.footer-right input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.footer-right label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-right label a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+}
+
+.footer-right label a:hover {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+.footer-right button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer-right button:hover {
+  background-color: #000;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-logos img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-bottom a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+}
+
+.footer-bottom a:hover {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+/* Responsive Styles */
+
+/* Tablets (768px to 1024px) */
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
+  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.feature-item {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 394px;
+}
+
+.feature-item h3 {
+  margin: 20px 0 10px;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 2.5em;
+  color: #525252;
+}
+
+.feature-item p {
+  font-size: 1em;
+  color: #777;
+  margin: 0;
+  max-width: 300px;
+}
+
+.feature-item img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+.feature-item2 {
+  background-image: url(/assets/image-025.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.feature-item3 {
+  background-image: url(/assets/image-023.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.feature-item4 {
+  background-image: url(/assets/image-022.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.feature-item5 {
+  background-image: url(/assets/image-024.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.feature-item ul li {
+  font-size: 1.2em;
+  color: #000;
+  margin: 0;
+  max-width: 300px;
+  text-align: left;
+}
+.partners {
+  display: flex;
+  background-color: #525252;
+}
+.partners h1 {
+  display: flex;
+  font-family: "Playfair Display", sans-serif;
+  text-align: center;
+  font-size: 5vw;
+  font-weight: 100;
+  color: #d2e2ca;
+  margin-top: 50px;
+  letter-spacing: -0.2vw;
+  padding-left: 30px;
+}
+.partners img {
+  align-items: flex-end;
+  height: 100%;
+}
+.decor-guidance h1 {
+  font-family: "Playfair Display", sans-serif;
+  text-align: center;
+  font-size: 3vw;
+  font-weight: 100;
+  color: #4a4a4a;
   margin-top: 50px;
   margin-bottom: 50px;
+  letter-spacing: -0.2vw;
+}
+.partners-img-collection {
+  display: flex;
+  justify-content: center; /* Centers image horizontally */
+  align-items: center; /* Centers image vertically */
+  width: 100%; /* Ensure it takes full width of parent */
+  height: 30px; /* Set a height to demonstrate centering */
+  margin-bottom: 50px;
+}
+
+.partners-img-collection img {
+  max-width: 50vw;
+  max-height: 100%;
+  object-fit: contain; /* Ensures image fits within container without distortion */
+}
+
+.img-grid {
+  display: flex;
+  justify-content: center; /* Centers image horizontally */
+  align-items: center; /* Centers image vertically */
+  width: 100%; /* Ensure it takes full width of parent */
+  height: 30px; /* Set a height to demonstrate centering */
+  margin-top: 100px;
+  margin-bottom: 50px;
+  gap: 30px;
+}
+
+.img-grid img {
+  width: 10vw;
+  height: auto; /* Ensures images maintain their aspect ratio */
+}
+.partners p {
+  font-size: 20px;
+  color: #000;
+  margin: 0;
+  margin-bottom: 50px;
+  padding-left: 30px;
+  text-align: left;
 }
