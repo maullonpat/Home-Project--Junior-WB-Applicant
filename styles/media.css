@@ -91,7 +91,6 @@
 @media (max-width: 1200px) {
   .partners p {
     font-size: 20px;
-    color: #000;
     margin: 0;
     margin-bottom: 50px;
     padding-left: 30px;
@@ -153,16 +152,18 @@
 }
 @media (max-width: 777px) {
   .partners p {
-    font-size: 15px;
-    color: #000;
+    font-size: 2vw;
     margin: 0;
     margin-bottom: 50px;
     padding-left: 30px;
     text-align: left;
   }
+  .feature-item {
+    height: auto;
+  }
   .features-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 0px;
     padding: 50px;
     max-width: 800px;
@@ -184,14 +185,6 @@
 }
 /* Media query for mobile screens */
 @media (max-width: 480px) {
-  .features-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0px;
-    padding: 50px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
   .feature-item ul li {
     font-size: 1em;
     color: #000;
