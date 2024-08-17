@@ -10,3 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuBar.classList.toggle("show");
   });
 });
+
+function goToURL(url, target) {
+  window.open(url, target);
+}
